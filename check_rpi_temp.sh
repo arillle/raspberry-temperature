@@ -13,7 +13,7 @@ CPU_TEMP=${CPU_TEMP:5:-4}
 if which vcgencmd >/dev/null; then
   COMMANDFOUND=1
  else
-  echo "CRITICAL - Command $1 is missing"
+  echo "CRITICAL - Command vcgencmd is missing"
   exit 2
 fi
 
