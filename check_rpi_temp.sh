@@ -1,5 +1,6 @@
 #!/bin/bash
-#FOR NAGIOS, ADD:"/bin/chmod u+s /opt/vc/bin/vcgencmd" TO /etc/rc.local (last line must be exit 0)
+export PATH=$PATH:"/opt/vc/bin"
+#FOR NRPE, ADD:"/bin/chmod u+s /opt/vc/bin/vcgencmd" TO /etc/rc.local (last line must be exit 0)
 SHUT_HIGH_TEMP=70
 SHUT_MIN_TEMP=5
 CRIT_HIGH_TEMP=67
