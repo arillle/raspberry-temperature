@@ -10,17 +10,12 @@ WARNING_MIN_TEMP=10
 CPU_TEMP=`/opt/vc/bin/vcgencmd measure_temp`
 CPU_TEMP=${CPU_TEMP:5:-4}
 
-function checkcommandexists ()
- {
- if which $1 >/dev/null; then
+if which vcgencmd >/dev/null; then
   COMMANDFOUND=1
  else
   echo "CRITICAL - Command $1 is missing"
   exit 2
- fi
- }
-
-checkcommandexists vcgencmd
+fi
 
 if [ "$CPU_TEMP" -gt "$WARNING_MIN_TEMP" ] && [ "$CPU_TEMP" -lt "$WARNING_HIGH_TEMP" ];
  then
