@@ -25,7 +25,8 @@ fi
 
 if [ "$CPU_TEMP" -lt "$SHUT_MIN_TEMP" ] || [ "$CPU_TEMP" -ge "$SHUT_HIGH_TEMP" ];
  then
-  echo "CRITICAL - SHUTING DOWN - Core is $CPU_TEMP Celsius"
+  echo "CRITICAL - SHUTTING DOWN - Core is $CPU_TEMP Celsius"
+  logger "CRITICAL - SHUTTING DOWN - Core is $CPU_TEMP Celsius"
   /sbin/shutdown -hP -t 2
   exit 2
 fi
